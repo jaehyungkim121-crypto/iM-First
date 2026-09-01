@@ -96,21 +96,31 @@ nav{
 }
 .hero-main-title .mint{color:#06D6A0;}
 .section-title .mint{color:#06D6A0;}
+.section-title .blue{color:var(--blue-d);}
 .hero-sub-title{font-size:clamp(1.7rem,4.6vw,3.1rem);color:#1E1E1E;letter-spacing:-.01em;line-height:1.15;margin-top:6px;animation:fadeUp .7s .26s ease both;}
 .hero-sub-title .mint{color:#06D6A0;}
-.hero-desc{font-size:clamp(.86rem,1.6vw,1.02rem);color:#1E1E1E;margin-top:12px;line-height:1.6;max-width:620px;margin-left:auto;margin-right:auto;animation:fadeUp .7s .34s ease both;}
+.hero-desc{font-size:clamp(.86rem,1.6vw,1.02rem);color:#1E1E1E;margin-top:12px;line-height:1.6;word-break:keep-all;max-width:620px;margin-left:auto;margin-right:auto;animation:fadeUp .7s .34s ease both;}
 .hero-desc-hl{color:var(--ink);font-weight:800;background:linear-gradient(transparent 56%,rgba(6,214,160,.35) 56%);padding:0 4px;border-radius:2px;}
 .hero-period{
-  margin-top:24px;display:inline-flex;align-items:center;gap:14px;
+  margin-top:26px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;
   background:linear-gradient(100deg,var(--mint-d),var(--mint));
-  padding:13px 28px;border-radius:14px;box-shadow:0 10px 26px rgba(6,214,160,.32);
+  padding:14px 30px 12px;border-radius:100px;box-shadow:0 10px 26px rgba(6,214,160,.32);
   animation:fadeUp .7s .42s ease both;
 }
-.hero-period .label{font-size:.66rem;letter-spacing:.14em;color:rgba(255,255,255,.86);}
-.hero-period .date{font-size:1rem;color:#fff;}
-.hero-rounds{margin-top:13px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .5s ease both;}
-.hero-round{background:#fff;border:1.5px solid var(--line);color:var(--mint-dd);font-size:.78rem;padding:7px 16px;border-radius:100px;box-shadow:0 6px 16px rgba(6,214,160,.12);}
-.hero-round b{color:var(--ink);}
+.hero-period .ico{font-size:1.05rem;line-height:1;}
+.hero-period .date{font-size:clamp(.95rem,1.9vw,1.14rem);color:#fff;line-height:1;}
+.hero-period .sep{width:1px;height:14px;background:rgba(255,255,255,.5);}
+.hero-period .target{font-size:clamp(.95rem,1.9vw,1.14rem);color:#fff;line-height:1;}
+.hero-rounds{margin-top:12px;display:flex;justify-content:center;animation:fadeUp .7s .5s ease both;}
+.hero-round-box{
+  display:inline-flex;align-items:center;gap:11px;flex-wrap:wrap;justify-content:center;
+  background:var(--mint-l);border:1.5px solid rgba(6,214,160,.26);
+  padding:9px 20px 7px;border-radius:100px;
+}
+.hero-round-box .ico{font-size:.92rem;line-height:1;}
+.hero-round-box .r{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;color:var(--gray);line-height:1;}
+.hero-round-box .r b{color:#fff;background:var(--mint-d);font-size:.76rem;padding:5px 10px 3px;border-radius:100px;line-height:1;}
+.hero-round-box .bar{width:1px;height:12px;background:rgba(6,214,160,.4);}
 .hero-scroll{margin-top:34px;font-size:.66rem;letter-spacing:.2em;color:var(--gray-l);animation:fadeUp .7s .58s ease both,bounce 2s 1.2s ease-in-out infinite;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
@@ -422,6 +432,11 @@ footer .f-txt{font-size:.78rem;line-height:1.8;}
   .container{padding:0 20px;}
   #hero{padding:92px 22px 46px;}
   .br-m{display:block;}
+  .hero-period{gap:8px;padding:13px 22px 11px;border-radius:22px;}
+  .hero-period .sep{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.75);}
+  .hero-round-box{flex-direction:column;align-items:center;gap:8px;border-radius:22px;padding:13px 22px 11px;}
+  .hero-round-box .bar{display:none;}
+  .hero-round-box .ico{display:none;}
   .char-a{width:40vw;margin-left:0;}
   .char-b{width:44vw;margin-right:0;}
   .ev-grid,.prize-cols{grid-template-columns:1fr;}
@@ -544,7 +559,6 @@ footer .f-txt{font-size:.78rem;line-height:1.8;}
    아래에서 line-height를 1로 고정하고 flex로 정렬합니다. */
 .nav-cta,
 .hero-tag,
-.hero-round,
 .hero-period .label,
 .hero-period .date,
 .flow-bridge-label,
@@ -620,18 +634,23 @@ footer .f-txt{font-size:.78rem;line-height:1.8;}
     <p class="hero-question">iM을 아끼는 마음, <br class="br-m">직접 써보고 더 좋게 만드는 실천으로</p>
     <div class="hero-tag">EMPLOYEE FIRST</div>
     <h1 class="hero-main-title"><span class="mint">iM</span> First</h1>
-    <p class="hero-sub-title">우리 상품, <span class="mint">우리가</span> 먼저!</p>
+    <p class="hero-sub-title">당신의 금융생활, 첫 번째는 <span class="mint">iM</span>인가요?</p>
     <p class="hero-desc">
 당행 상품을 직접 이용하고 경험하며 더 좋은 iM을 만들어가요
     </p>
     <div class="hero-period">
-      <span class="label">운영 기간</span>
+      <span class="ico">📅</span>
       <span class="date">2026.09.01(화) ~ 11.30(월)</span>
+      <span class="sep"></span>
+      <span class="target">전 직원</span>
     </div>
     <div class="hero-rounds">
-      <span class="hero-round"><b>1차</b> 09.01 ~ 10.15</span>
-      <span class="hero-round"><b>2차</b> 10.16 ~ 11.30</span>
-      <span class="hero-round"><b>대상</b> 전 직원</span>
+      <span class="hero-round-box">
+        <span class="ico">🗓</span>
+        <span class="r"><b>1차</b> 09.01. ~ 10.15.</span>
+        <span class="bar"></span>
+        <span class="r"><b>2차</b> 10.16. ~ 11.30.</span>
+      </span>
     </div>
     <div class="hero-scroll">↓ &nbsp; SCROLL</div>
   </div>
@@ -772,8 +791,8 @@ footer .f-txt{font-size:.78rem;line-height:1.8;}
     <div class="ev-head reveal">
       <span class="ev-badge b2">EVENT 02</span>
     </div>
-    <h2 class="section-title reveal">iM의 신상품을 먼저 경험해보세요!</h2>
-    <p class="section-lead reveal"><b style="color:var(--blue-d)">신상품을 먼저 써보고, 후기를 남기면 참여 완료!</b><br>후기를 남긴 분들 중에서 EVENT 01과 별도로 경품을 추첨합니다.</p>
+    <h2 class="section-title reveal">새로운 <span class="blue">iM</span>을 <span class="blue">먼저</span> 만나보세요!</h2>
+    <p class="section-lead reveal">신상품을 이용하고 <b style="color:var(--blue-d)">솔직한 후기</b>를 공유해주세요! <span style="color:var(--gray-l)">(향후 상품 추가 가능)</span><br>후기를 남긴 분들 중에서 EVENT 01과 별도로 경품을 추첨합니다.</p>
 
     <div class="ev-grid one">
       <div class="ev-card static reveal">
@@ -816,7 +835,7 @@ footer .f-txt{font-size:.78rem;line-height:1.8;}
       </div>
     </div>
     <p class="ev-note reveal">
-      ※ <b style="color:var(--blue-d)">신상품 라인업은 운영 기간 중 추가될 수 있습니다.</b> 새로운 상품이 추가되면 별도로 안내드립니다.<br>
+      ※ <b style="color:var(--blue-d)">신상품 라인업이 추가되면</b> 별도로 안내드립니다.<br>
       ※ EVENT 02의 경품은 EVENT 01과 별도로 추첨되며, 두 이벤트에 모두 참여할 수 있습니다.
     </p>
   </div>
